@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_mecab_jar" name="Create Runnable Jar for Project Utility">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_mecab_jar">
+        <jar destfile="./mecab.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="morphological.MeCab"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="./bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="./ext/cmecab-2.0.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="./ext/lib/bridj-0.6.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="./ext/lib/groovy-all-1.8.6.jar"/>
+        </jar>
+    </target>
+</project>
